@@ -1,0 +1,271 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+html	{
+	font-size: 62.5%;
+}
+body{
+	margin-right: 8%;
+	margin-left: 8%;
+	background: rgb(255,245,206);
+	background: radial-gradient(circle, rgba(255,245,206,1) 17%, rgba(7,7,150,1) 89%, rgba(0,0,0,1) 100%, rgba(53,80,157,1) 100%);
+	background-size: contain;
+	background-repeat: no-repeat;
+	overflow: scroll;
+}
+
+.cuerpo {
+	display: grid;
+	grid-template-areas: 
+	"header header header"
+	"nav nav nav"
+	"section section aside"
+	"map map map"
+	"footer footer footer";
+	grid-template-columns: 2fr 2fr 1fr;
+}
+
+.encabezado {
+	grid-area: header;
+}
+
+.menu {
+	font-size: 1.5rem;
+	grid-area: nav;
+	width: 100%;
+}
+
+.seccion {
+	grid-area: section;
+	justify-content: row;
+
+}	
+
+.alCostado {
+	grid-area: aside;
+}
+
+.mapa {
+	grid-area: map;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+
+.pieDepagina {
+	grid-area: footer;
+}
+
+
+
+main {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-image: url(imagenes/fond.png);
+	background-size: cover;
+
+}
+
+
+div table tr th {
+	font-size: 1.5rem;
+	background-color: white;
+}
+
+div table tr td {
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+div table {
+	width: 100%;
+}
+
+h1 {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: blue;
+	font-family: sans-serif;
+	text-align: center; 
+	text-decoration-line: underline;
+
+}
+tr th {
+	color: green;
+}
+.gris {
+	color: gray;
+}
+.servicios {
+	color: rgb(171,80,73);
+	text-align: center;
+}
+.servicios  {
+	color: rgb(171,80,73);
+	text-align: center;
+	font-size: 1.5rem;
+}
+.productos {
+	color: rgb(69,98,125);
+	text-align: center;
+}
+.productos {
+	color: rgb(171,80,73);
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.empresa {
+	color: black;
+	font-family: serif;
+	font-size: 3rem;
+	font-weight: bolder;
+	font-stretch: semi-condensed;
+	background-image: url(imagenes/emp1.png);
+	position: top: margin;
+	display: inline-block;
+	justify-content: top;
+	align-content: center;
+	margin-top: 10rem;
+}
+
+
+section	div	ul {
+	list-style-position: inside;
+}
+
+
+.form {
+	display: flex;
+	flex-direction: row;
+	font-size: 1.3rem;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+.registrarse {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.redesSociales {
+	border: solid 2px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 2rem;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.redesSociales a:hover {
+	transform: scale(2,2);
+}
+
+@keyframes efecto1{
+       0%{font-size: 3rem; height: 3rem; background-color: #6b91fc; }
+       25%{height: 3rem; background-color: #1d54e7; }
+       50%{ height: 4rem; background-color: white;}
+       75%{height: 3rem; background-color: #6b91fc;}
+       100%{height: 3rem;  background-color: #1d54e7;}
+} 
+
+.mapa h1 {
+	animation-name: efecto1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-delay: 2s;
+	animation-timing-function: cubic-bezier(.21,.28,1,-0.04);
+}
+
+.logo {
+	display: flex;
+	margin-bottom: 3rem;
+}
+
+@keyframes efecto2{
+       0%{color: rgb(234,112,3);  }
+       25%{color: rgb(241,66,3);}
+       50%{color: rgb(250,206,13); }
+       75%{color: rgb(242,215,98);}
+       100%{color: rgb(19,13,13); }
+ }
+.redesSociales h2 {
+	animation-name: efecto2;
+	animation-delay: 2s;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+
+
+
+
+/*------------ Responsive Design -----------------------------------------*/
+
+@media only screen and (max-width: 320px){
+
+
+	.empresa {
+		font-size: 2rem;
+		background-size: cover;
+	}
+
+	.tabla {
+		display: none;
+		visibility: hidden;
+	}
+
+aside {
+	display: none;
+	visibility: hidden;
+}
+
+
+}
+
+@media only screen and (max-width: 480px){
+
+.logo {
+	size: 30rem;
+	overflow-wrap: normal;
+}
+
+
+	.empresa {
+		font-size: 2rem;
+		overflow: auto;
+	}
+
+	.tabla {
+		display: none;
+		visibility: hidden;
+	}
+
+
+main {
+	display: flex;
+	flex-direction: column; 
+	background-image: url(imagenes/fond.png);
+	background-size: cover;
+
+}
+aside {
+	display: none;
+	visibility: hidden;
+}
+
+}
+
+@media only screen and (max-width: 768px){
+	.menu {
+		font-size: 2rem;
+		overflow: row;
+		flex-wrap: wrap;
+	}
+	
+}
